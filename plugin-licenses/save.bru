@@ -1,0 +1,21 @@
+meta {
+  name: save
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{host}}/v1/plugin-licenses/{{license_key}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "edition": "{{plugin_edition}}",
+    "expirable": {{plugin_expirable}},
+    "expiresOn": {{plugin_expires_on}},
+    "notes": {{plugin_notes}},
+    "privateNotes": {{plugin_private_notes}}
+  }
+}
